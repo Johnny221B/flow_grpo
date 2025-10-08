@@ -307,3 +307,7 @@ tags
 wandb/
 logs/
 notebooks/
+
+.venv/
+.cache/
+*.egg-info/
