@@ -45,6 +45,10 @@ $PIP install "${PIP_ARGS[@]}" "paddlepaddle-gpu==${PADDLE_VER}"
 echo "==> 安装 PaddleOCR 与 Levenshtein"
 $PIP install "${PIP_ARGS[@]}" "paddleocr==${PADDLEOCR_VER}" "python-Levenshtein"
 
+echo "==> 使用 headless OpenCV以移除 libGL 依赖"
+$PIP uninstall -y opencv-python opencv-contrib-python || true
+$PIP install opencv-contrib-python-headless==4.11.0.86
+
 # 4) 预下载模型（固定 use_gpu=True）
 echo "==> 预下载 OCR 模型 (lang='${LANG_CODE}', use_gpu=True)"
 $RUNPY - <<PY

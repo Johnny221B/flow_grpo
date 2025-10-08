@@ -302,6 +302,8 @@ tags
 .ionide
 .claude/
 
+.secrets/
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,intellij+all,vim
 
 wandb/
@@ -310,4 +312,4 @@ notebooks/
 
 .venv/
 .cache/
-*.egg-info/
+*.egg-info/.secrets/
